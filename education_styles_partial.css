@@ -1,0 +1,101 @@
+/* Education Timeline - Redesign (Left Aligned Standard) */
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0 20px 40px;
+    /* Space for line on left */
+}
+
+/* The vertical line */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+    opacity: 0.5;
+    transform: none;
+    /* Reset center transform */
+}
+
+.education-card {
+    position: relative;
+    width: 100%;
+    margin-bottom: 3.5rem;
+    padding: 2rem 2.5rem;
+    left: auto !important;
+    /* Reset alternating left */
+    text-align: left !important;
+    /* Reset alternating align */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.education-card:hover {
+    transform: translateX(10px) !important;
+    /* Hover effect to right */
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary-color);
+}
+
+/* Timeline Dots */
+.education-card::after {
+    content: '';
+    position: absolute;
+    left: -34px;
+    /* Align with line */
+    top: 25px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+    z-index: 10;
+    transform: none !important;
+}
+
+/* Hover effect on dot */
+.education-card:hover::after {
+    background: var(--primary-color);
+    box-shadow: 0 0 25px var(--primary-color), 0 0 50px var(--secondary-color);
+}
+
+/* Reset specific alignment styles from previous design */
+.education-card:nth-child(even),
+.education-card:nth-child(odd) {
+    left: auto;
+    text-align: left;
+}
+
+.education-card:nth-child(even)::after,
+.education-card:nth-child(odd)::after {
+    left: -34px;
+    right: auto;
+    top: 25px;
+}
+
+/* CGPA Badge Styke */
+.cgpa-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 242, 255, 0.1);
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    border-radius: 8px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.cgpa-badge i {
+    font-size: 1.1rem;
+}
