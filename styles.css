@@ -538,6 +538,10 @@ nav .container {
     margin-bottom: 1.5rem;
     flex: 1;
 }
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
 
 /* Contact */
 .contact-container {
