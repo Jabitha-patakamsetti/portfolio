@@ -113,6 +113,7 @@ h4,
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+
 }
 
 .section-title {
@@ -160,6 +161,9 @@ nav .container {
     letter-spacing: 1px;
     text-decoration: none;
 }
+
+
+
 
 .nav-links {
     display: flex;
